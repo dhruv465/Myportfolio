@@ -13,7 +13,7 @@ const Footer = () => {
           }}
         >
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Dhruv&nbsp;<span className="sm:block hidden">| Developer</span>
+            Find &nbsp;<span className="sm:block hidden"> me here&nbsp; &rarr;</span>
           </p>
         </Link>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

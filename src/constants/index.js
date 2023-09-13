@@ -14,8 +14,8 @@ import {
   git,
   figma,
   meta,
-  starbucks,
-  tesla,
+  gmail,
+  portfolio,
   shopify,
   project1,
   project2,
@@ -91,10 +91,10 @@ const technologies = [
     name: "Node JS",
     icon: nodejs,
   },
-   {
-     name: "PhP",
-     icon: php,
-   },
+  {
+    name: "Php",
+    icon: php,
+  },
   {
     name: "git",
     icon: git,
@@ -110,7 +110,7 @@ const experiences = [
   {
     title: "React.js Developer",
     company_name: "Gmail",
-    icon: starbucks,
+    icon: gmail,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
     points: [
@@ -123,7 +123,7 @@ const experiences = [
   {
     title: "Angular Developer",
     company_name: "Portfolio",
-    icon: tesla,
+    icon: portfolio,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
@@ -210,7 +210,7 @@ const projects = [
       },
     ],
     image: project1,
-     // source_code_link: "https://github.com/dhruv465/GmailCloneFirebase",
+    // source_code_link: "https://github.com/dhruv465/GmailCloneFirebase",
     live_site_link: "https://gmail-clone-firebase-seven.vercel.app/",
   },
   {

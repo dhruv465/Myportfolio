@@ -72,7 +72,7 @@ const Contact = () => {
   const subject = "Contact Request"; // Set your subject here
 
   // Replace 'your_email@example.com' with your actual email address
-  const recipientEmail = "your_email@example.com";
+  const recipientEmail = "dhruv.sathe11@gmail.com";
 
   return `mailto:${recipientEmail}?subject=${encodeURIComponent(
     subject

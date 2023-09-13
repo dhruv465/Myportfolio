@@ -18,6 +18,9 @@ module.exports = {
       screens: {
         xs: "450px",
       },
+      fontFamily: {
+        'dancing-script': ['Dancing Script', 'cursive'],
+      },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },

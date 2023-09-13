@@ -10,6 +10,7 @@ import {
   redux,
   tailwind,
   nodejs,
+  php,
   git,
   figma,
   meta,
@@ -38,7 +39,6 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
-
 ];
 
 // Services
@@ -91,10 +91,10 @@ const technologies = [
     name: "Node JS",
     icon: nodejs,
   },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
+   {
+     name: "PhP",
+     icon: php,
+   },
   {
     name: "git",
     icon: git,
@@ -103,14 +103,13 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-
 ];
 
 // Experiences
 const experiences = [
   {
     title: "React.js Developer",
-    company_name: "Starbucks",
+    company_name: "Gmail",
     icon: starbucks,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
@@ -123,7 +122,7 @@ const experiences = [
   },
   {
     title: "Angular Developer",
-    company_name: "Tesla",
+    company_name: "Portfolio",
     icon: tesla,
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
@@ -136,12 +135,12 @@ const experiences = [
   },
   {
     title: "Web Developer",
-    company_name: "Shopify",
+    company_name: "Emp System",
     icon: shopify,
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Developing and maintaining web applications using php and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
@@ -155,7 +154,7 @@ const experiences = [
     date: "Jan 2023 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Collaborating with cross-functional teams including designers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
@@ -166,7 +165,7 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Dhruv proved me wrong.",
     name: "Sara Lee",
     designation: "CFO",
     company: "Acme Co",
@@ -174,7 +173,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Dhruv does.",
     name: "Chris Brown",
     designation: "COO",
     company: "DEF Corp",
@@ -182,10 +181,10 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Dhruv optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Lisa Wang",
     designation: "CTO",
-    company: "456 Enterprises",
+    company: "Lora Enterprises",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
@@ -211,6 +210,7 @@ const projects = [
       },
     ],
     image: project1,
+     // source_code_link: "https://github.com/dhruv465/GmailCloneFirebase",
     live_site_link: "https://gmail-clone-firebase-seven.vercel.app/",
   },
   {
@@ -232,7 +232,6 @@ const projects = [
       },
     ],
     image: project2,
-    // source_code_link: "https://github.com/Technical-Dhruv-tech/fitness-app",
     live_site_link: "https://niriglobal.com/",
   },
   // {

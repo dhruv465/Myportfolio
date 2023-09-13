@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -7,7 +7,6 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-// Contact
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -16,14 +15,13 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  // handle form change
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm({ ...form, [name]: value });
   };
-
   // validate form on submit
   const validateForm = () => {
     // form fields
@@ -96,10 +94,16 @@ const Contact = () => {
       )
       .then(
         () => {
-          // Success
           setLoading(false);
-          alert("Thank You. I will get back to you as soon as possible.");
+          setSuccessMessage(
+            "Thank you. I will get back to you as soon as possible."
+          );
+          // Automatically clear the success message after 5 seconds (5000 milliseconds)
+          setTimeout(() => {
+            setSuccessMessage("");
+          }, 10000);
 
+          setErrorMessage(""); // Clear any previous error message
           setForm({
             name: "",
             email: "",
@@ -107,20 +111,19 @@ const Contact = () => {
           });
         },
         (error) => {
-          // Error handle
           setLoading(false);
+          setSuccessMessage(""); // Clear any previous success message
+          setErrorMessage(
+            "Sorry, something went wrong. Please try again later."
+          );
           console.log(error);
-          alert("Sorry. Something went wrong.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
         }
       );
   };
-
+  useEffect(() => {
+    // Cleanup the success message timer when the component unmounts
+    return () => clearTimeout(successMessage);
+  }, [successMessage]);
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
@@ -128,7 +131,7 @@ const Contact = () => {
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         {/* Title */}
-        <p className={styles.sectionSubText}>Get in touch</p>
+        <p className={styles.sectionSubText}>Drop Us message</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         {/* Form */}
@@ -197,7 +200,27 @@ const Contact = () => {
               Invalid Message!
             </span>
           </label>
+          {/* Success Message */}
+          {successMessage && (
+            <div className="alert alert-success alert-dismissible fade show">
+              {successMessage}
+             
+            </div>
+          )}
 
+          {/* Error Message */}
+          {errorMessage && (
+            <div className="alert alert-danger alert-dismissible fade show">
+              {errorMessage}
+              <button
+                type="button"
+                className="close"
+                onClick={() => setErrorMessage("")}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          )}
           {/* Submit */}
           <button
             type="submit"

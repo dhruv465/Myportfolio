@@ -66,7 +66,18 @@ const Contact = () => {
     // True if all fields are validated
     return Object.keys(current).every((k) => current[k]);
   };
+ // Construct a mailto link
+ const createMailtoLink = () => {
+  const { name, email, message } = form;
+  const subject = "Contact Request"; // Set your subject here
 
+  // Replace 'your_email@example.com' with your actual email address
+  const recipientEmail = "your_email@example.com";
+
+  return `mailto:${recipientEmail}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+};
   // handle form submit
   const handleSubmit = (e) => {
     // prevent default page reload
@@ -78,52 +89,20 @@ const Contact = () => {
     // show loader
     setLoading(true);
 
-    // send email
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_SERVICE_ID,
-        import.meta.env.VITE_APP_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Dhruv",
-          from_email: form.email.trim().toLowerCase(),
-          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setSuccessMessage(
-            "Thank you. I will get back to you as soon as possible."
-          );
-          // Automatically clear the success message after 5 seconds (5000 milliseconds)
-          setTimeout(() => {
-            setSuccessMessage("");
-          }, 10000);
+    // Construct the mailto link
+    const mailtoLink = createMailtoLink();
 
-          setErrorMessage(""); // Clear any previous error message
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          setSuccessMessage(""); // Clear any previous success message
-          setErrorMessage(
-            "Sorry, something went wrong. Please try again later."
-          );
-          console.log(error);
-        }
-      );
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+
+    // Clear loader and form state
+    setLoading(false);
+    setForm({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
-  useEffect(() => {
-    // Cleanup the success message timer when the component unmounts
-    return () => clearTimeout(successMessage);
-  }, [successMessage]);
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div

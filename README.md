@@ -14,7 +14,7 @@ VITE_APP_EMAILJS_KEY=XXXXXXXXXXXXXXXX
 VITE_APP_EMAILJS_RECIEVER=your@gmail.com
 ```
 
-5. Open terminal in root directory. Run `npm install` or `yarn install`.
+5. Open terminal in root directory. Run `npm install`.
 
 6. Create new account in [EmailJS](emailjs.com "EmailJS")
 
@@ -28,7 +28,7 @@ VITE_APP_EMAILJS_RECIEVER=your@gmail.com
 
 10. To get your **Public Key**, click on your username on navbar and go to account settings > Copy Public Key to `VITE_APP_EMAILJS_KEY`
 
-11. Now app is fully configured :+1: and you can start using this app using `npm run dev` or `yarn run dev`. The app is created using vite.
+11. Now app is fully configured :+1: and you can start using this app using `npm run dev`. The app is created using vite.
 
 **NOTE:** Make sure you don't share these keys publicaly.
 

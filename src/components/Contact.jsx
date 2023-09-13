@@ -81,16 +81,16 @@ const Contact = () => {
     // send email
     emailjs
       .send(
-        import.meta.env.VITE_APP_SERVICE_ID,
-        import.meta.env.VITE_APP_TEMPLATE_ID,
+        import.meta.env.VITE_APP_SERVICE_ID, // Service ID
+        import.meta.env.VITE_APP_TEMPLATE_ID, // Template ID
         {
           from_name: form.name,
           to_name: "Dhruv",
           from_email: form.email.trim().toLowerCase(),
-          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
+          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER, // Receiver email
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_KEY
+        import.meta.env.VITE_APP_EMAILJS_KEY // Public key
       )
       .then(
         () => {
@@ -204,7 +204,6 @@ const Contact = () => {
           {successMessage && (
             <div className="alert alert-success alert-dismissible fade show">
               {successMessage}
-             
             </div>
           )}
 

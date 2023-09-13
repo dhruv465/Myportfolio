@@ -11,6 +11,7 @@ import {
   tailwind,
   nodejs,
   php,
+  mysql,
   git,
   figma,
   meta,
@@ -102,6 +103,10 @@ const technologies = [
   {
     name: "figma",
     icon: figma,
+  },
+  {
+    name: "MySql",
+    icon: mysql,
   },
 ];
 

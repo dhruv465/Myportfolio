@@ -240,7 +240,7 @@ const projects = [
     live_site_link: "https://niriglobal.com/",
   },
   {
-    name: "Shoppy",
+    name: "Custome Your T-Shirt",
     description:
       "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
     tags: [

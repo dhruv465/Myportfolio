@@ -245,7 +245,7 @@ const projects = [
       "Create your unique and exclusive shirt with our brand-new 3D customization tool. Unleash your imagination and define your own style.",
     tags: [
       {
-        name: "react+vite",
+        name: "react + vite",
         color: "blue-text-gradient",
       },
       {
@@ -253,7 +253,7 @@ const projects = [
         color: "green-text-gradient",
       },
       {
-        name: "tailwindcss",
+        name: "tailwind css",
         color: "pink-text-gradient",
       },
     ],

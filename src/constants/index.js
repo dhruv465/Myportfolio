@@ -239,29 +239,29 @@ const projects = [
     image: project2,
     live_site_link: "https://niriglobal.com/",
   },
-  // {
-  //   name: "Shoppy",
-  //   description:
-  //     "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "syncfusion",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scss",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: project3,
-  //   source_code_link:
-  //     "https://github.com/Technical-Dhruv-tech/admin-dashboard",
-  //   live_site_link: "https://shoppy-dashboard-react.netlify.app/",
-  // },
+  {
+    name: "Shoppy",
+    description:
+      "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "syncfusion",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: project3,
+    source_code_link:
+      "https://github.com/Technical-Dhruv-tech/admin-dashboard",
+    live_site_link: "https://shoppy-dashboard-react.netlify.app/",
+  },
   // {
   //   name: "TikTok Clone",
   //   description:

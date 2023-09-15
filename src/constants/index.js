@@ -242,25 +242,25 @@ const projects = [
   {
     name: "Custome Your T-Shirt",
     description:
-      "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
+      "Create your unique and exclusive shirt with our brand-new 3D customization tool. Unleash your imagination and define your own style.",
     tags: [
       {
-        name: "react",
+        name: "react+vite",
         color: "blue-text-gradient",
       },
       {
-        name: "syncfusion",
+        name: "three js",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "tailwindcss",
         color: "pink-text-gradient",
       },
     ],
     image: project3,
-    source_code_link:
-      "https://github.com/Technical-Dhruv-tech/admin-dashboard",
-    live_site_link: "https://shoppy-dashboard-react.netlify.app/",
+    // source_code_link:
+    //    "https://github.com/Technical-Dhruv-tech/admin-dashboard",
+    live_site_link: "https://3d-t-shirt.vercel.app/",
   },
   // {
   //   name: "TikTok Clone",

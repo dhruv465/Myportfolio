@@ -79,7 +79,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/send-email",
+        "https://backend-portfolio-0kj7.onrender.com/send-email",
         form
       ); // Send 'form' data
 

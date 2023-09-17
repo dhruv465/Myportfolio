@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "heatrix";
-  src: local("heatrix"), url(./fonts/heatrix-wyxm4.otf) format("truetype");
+  font-family: "Heatrix";
+  src: local("Heatrix"), url(./fonts/heatrix-wyxm4.otf) format("truetype");
 }
 
 * {

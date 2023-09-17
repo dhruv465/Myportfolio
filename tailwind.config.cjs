@@ -20,7 +20,7 @@ module.exports = {
       },
       fontFamily: {
         'dancing-script': ['Dancing Script', 'cursive'],
-        'custom': ['Averica', 'sans-serif'],
+        'custom': ['Heatrix', 'sans-serif'],
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",

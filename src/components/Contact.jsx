@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
+import axios from "axios"; // Make sure axios is installed
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -22,6 +21,7 @@ const Contact = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+
   // validate form on submit
   const validateForm = () => {
     // form fields
@@ -45,7 +45,7 @@ const Contact = () => {
     const email_regex =
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    // valiate email
+    // validate email
     if (!email.trim().toLowerCase().match(email_regex)) {
       emailError.classList.remove("hidden");
       current["email"] = false;
@@ -66,20 +66,8 @@ const Contact = () => {
     // True if all fields are validated
     return Object.keys(current).every((k) => current[k]);
   };
- // Construct a mailto link
- const createMailtoLink = () => {
-  const { name, email, message } = form;
-  const subject = "Contact Request"; // Set your subject here
 
-  // Replace 'your_email@example.com' with your actual email address
-  const recipientEmail = "dhruv.sathe11@gmail.com";
-
-  return `mailto:${recipientEmail}?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
-};
-  // handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // prevent default page reload
     e.preventDefault();
 
@@ -89,11 +77,21 @@ const Contact = () => {
     // show loader
     setLoading(true);
 
-    // Construct the mailto link
-    const mailtoLink = createMailtoLink();
+    try {
+      const response = await axios.post(
+        "http://localhost:5001/send-email",
+        form
+      ); // Send 'form' data
 
-    // Open the user's default email client
-    window.location.href = mailtoLink;
+      if (response.status === 200) {
+        setSuccessMessage("Message sent successfully!");
+      }
+    } catch (error) {
+      setErrorMessage("Error sending message. Please try again later.");
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
 
     // Clear loader and form state
     setLoading(false);
@@ -103,6 +101,7 @@ const Contact = () => {
       message: "",
     });
   };
+
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
@@ -183,7 +182,6 @@ const Contact = () => {
           {successMessage && (
             <div className="alert alert-success alert-dismissible fade show">
               {successMessage}
-             
             </div>
           )}
 
